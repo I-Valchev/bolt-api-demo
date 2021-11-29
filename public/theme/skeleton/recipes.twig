@@ -1,0 +1,25 @@
+{% extends 'listing.twig' %}
+
+{% block main %}
+    {% if is_granted('ROLE_MEMBER') %}
+        {{ parent() }}
+    {% else %}
+        <h2>Please become a member to view this recipe. €€€</h2>
+        <h3>Here's the login</h3>
+
+        <form action="/bolt/login" method="post">
+            <div>
+                <label>Username</label>
+                <input name="login[username]">
+            </div>
+            <div>
+                <label>Password</label>
+                <input name="login[password]" type="password">
+            </div>
+
+            <button type="submit">Log in</button>
+            <input type="hidden" name="login[_token]" value="{{ csrf_token('login_csrf_token') }}">
+            <input type="hidden" name="_target_path" value="/recipes">
+        </form>
+    {% endif %}
+{% endblock %}

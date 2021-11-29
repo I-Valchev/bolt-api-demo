@@ -3,9 +3,13 @@ security:
         ROLE_DEVELOPER: [ROLE_ADMIN, ROLE_CAN_SWITCH_USER]
         ROLE_ADMIN: [ROLE_CHIEF_EDITOR]
         ROLE_CHIEF_EDITOR: [ROLE_EDITOR]
-        ROLE_EDITOR: [ROLE_USER]
+        ROLE_EDITOR: [ROLE_USER, ROLE_MEMBER]
         # ROLE_USER is assigned to Bolt Entity Users if no roles have been set
         ROLE_USER: []
+        ROLE_API_WRITE: []
+        ROLE_API_DELETE: []
+        ROLE_API_MASTER: [ROLE_API_WRITE, ROLE_API_DELETE]
+        
 
     encoders:
         Bolt\Entity\User: auto
@@ -20,6 +24,10 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
+        api:
+            pattern: ^/drink
+            http_basic: ~
 
         main:
             pattern: ^/

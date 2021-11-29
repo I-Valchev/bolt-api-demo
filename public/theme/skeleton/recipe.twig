@@ -1,0 +1,9 @@
+{% extends 'record.twig' %}
+
+{% block main %}
+    {% if is_granted('ROLE_MEMBER') %}
+        {{ parent() }}
+    {% else %}
+        <h2>Please become a member to view this recipe. €€€</h2>
+    {% endif %}
+{% endblock %}
