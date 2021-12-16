@@ -40,15 +40,6 @@ class DrinksController extends AbstractController
      */
     public function index(): Response
     {
-        if ($this->isGranted('ROLE_API_REAd') {
-            //one set of things
-
-            //return respoinse
-        }
-
-        // otherwise, do other stuff
-
-
         $drinks = $this->drinkRepository->findAll();
 
         return new JsonResponse($drinks);

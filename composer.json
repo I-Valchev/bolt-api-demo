@@ -2,7 +2,8 @@
     "type": "project",
     "license": "proprietary",
     "require": {
-        "php": "7.4 || 8.0",
+        "php": "7.4 || ^8.0",
+        "ext-json": "*",
         "bobdenotter/configuration-notices": "^1.2",
         "bobdenotter/weatherwidget": "^1.1",
         "bolt/article": "^1.1",
@@ -11,10 +12,10 @@
         "bolt/newswidget": "^1.3",
         "bolt/redactor": "^1.1",
         "bolt/themes": "^3.5",
+        "guzzlehttp/guzzle": "^7.4",
         "nelmio/security-bundle": "^2.10",
         "symfony/flex": "^1.17",
-        "symfony/maker-bundle": "^1.36",
-        "ext-json": "*"
+        "symfony/maker-bundle": "^1.36"
     },
     "minimum-stability": "stable",
     "prefer-stable": true,

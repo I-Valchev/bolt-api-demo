@@ -11,9 +11,16 @@ recipes:
     fields:
         title:
             type: text
-        content:
+        photo:
+            type: image
+        instructions:
             type: redactor
-
+        recipe_id:
+            type: text
+            readonly: true
+        slug:
+            type: slug
+        
 
 homepage:
     name: Homepage
